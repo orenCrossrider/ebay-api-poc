@@ -60,13 +60,15 @@ ebay.xmlRequest({
             var aspectOptions = [];
             
             for (var j = 0; j < aspects[i].valueHistogram.length; j++) {
-              aspectOptions.push(aspects[i].valueHistogram[j].$.valueName);
+              var valueName = aspects[i].valueHistogram[j].$.valueName;
+              var count = aspects[i].valueHistogram[j].count;
+              aspectOptions.push(valueName);
               if (j == 34) {
                 break;
               }
             };
 
-            // building array of names
+            // building arrays
             allAspectsNames.push(aspectName);
             allAspectsOptions.push(aspectOptions);
           }
